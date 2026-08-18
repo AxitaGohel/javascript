@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: darkgray; color: black;">
+
+    <ul class="lang">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+
+<script>
+
+    // add element
+    function addLang(langNm){
+        const li = document.createElement('li')
+        li.innerHTML = `${langNm}`
+        document.querySelector('ul').appendChild(li)
+    }
+    addLang('Python')
+    addLang('C++')
+
+    function addOptiLang(langNm){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langNm))
+        document.querySelector('ul').appendChild(li)
+    }
+    addOptiLang('HTML')
+
+    // edit element
+
+    const oldChild = document.querySelector("li:nth-child(3)")
+    //oldChild.innerHTML = "Ruby"
+    const newChild = document.createElement('li')
+    newChild.textContent = 'Java'
+    oldChild.replaceWith(newChild)
+
+    const oldchild = document.querySelector("li:first-child")
+    oldchild.outerHTML = "<li>CSS</li>"
+
+    // remove element
+
+    const child = document.querySelector('li:last-child')
+    child.remove()
+
+
+</script>
+
+</html>
