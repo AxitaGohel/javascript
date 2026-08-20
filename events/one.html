@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Events</title>
+</head>
+<body>
+    <h1>Amazing Images </h1>
+    <div>
+        <ul id="images">
+
+            <li><img width="200px" height="200px" id="tree" src="https://images.pexels.com/photos/14741987/pexels-photo-14741987.jpeg" alt="photoshop"></li>
+
+            <li><img width="200px" height="200px" id="river" src="https://images.pexels.com/photos/14942582/pexels-photo-14942582.jpeg" alt="photoshop"></li>
+            
+            <li><img width="200px" height="200px" id="owl" src="https://images.pexels.com/photos/13681325/pexels-photo-13681325.jpeg" alt="" /></li>
+
+            <li><img width="200px" height="200px" id="japan" src="https://images.pexels.com/photos/35333668/pexels-photo-35333668.jpeg" alt=""></li>
+
+            <li><img width="200px" height="200px" id="prayer" src="https://images.pexels.com/photos/7218342/pexels-photo-7218342.jpeg" alt=""></li>
+
+            <li><a href="https://www.google.com/" id="google">Google</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // document.getElementById('owl').onclick = function(){
+        //     alert('Owl by onClick event...')
+        // }
+        
+        // attachEvent()
+        // jQuery - on
+
+        // type, timestamp, defaultPrevented
+        // target, currentTarget, toElement, srcElement
+        // clientX, clientY, screenX, screenY
+        // altkey, shiftkey, ctrlkey, keyCode
+
+        // eventPropogation => 2 contexts
+        // 1. eventBubbling(Bottom -> Top, li -> ul) , false
+        // 2. eventCapturing (Top -> Bottom, ul -> li) , true
+
+        /*
+        document.getElementById('images').addEventListener('click',function(e){
+            // alert('Click in side UL')
+            // console.log(`Click in side UL`)
+            
+        },false)
+
+        document.getElementById('owl').addEventListener('click',function(e){
+            // alert('Owl by AddEventListener...')
+            // console.log(`Owl by AddEventListener...`)
+        },false) 
+        
+        document.getElementById('owl').addEventListener('click',function(e){
+            // alert('Owl by AddEventListener...')
+            console.log(`Owl by AddEventListener...`)
+            e.stopPropagation()
+        }, false) 
+
+        document.getElementById('google').addEventListener('click',function(e){
+            // alert('Owl by AddEventListener...')
+            e.preventDefault()
+            console.log(`Google Clicked...`)
+           
+        },false) */
+
+        document.getElementById('images').addEventListener('click', function(e){
+            // console.log(e)
+            // console.log(e.target)
+            // console.log(e.target.parentNode)
+
+            // if(e.target.tagName === 'img#tree'){
+            console.log(e.target.parentNode)
+            if(e.target.tagName === 'IMG'){
+                const removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+            
+            // }
+            
+            // removeIt.parentNode.childNode(removeIt)
+
+        })
+        
+
+       
+
+
+    </script>
+</body>
+</html>
