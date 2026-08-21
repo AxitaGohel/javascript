@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Async JS</title>
+</head>
+<body>
+    
+    <h1>Axita Gohel</h1>
+
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+</body>
+
+<script>
+    const start = document.getElementById('start')
+    const stop = document.getElementById('stop')
+    let intervalId;
+    // const sayDate = function(str){
+    //     console.log(str, Date.now())
+    // }
+
+    // const intervalId = setInterval(sayDate, 1000, "Krishna")
+    // const intervalClear = clearInterval(intervalId)
+
+    start.addEventListener('click',function(){
+        intervalID = setInterval(function(){
+            console.log("Axita", Date.now())
+        }, 1000)  
+    }, false)
+
+    stop.addEventListener('click', function(){
+        clearInterval(intervalID)
+    }, false)
+
+</script>
+
+</html>
