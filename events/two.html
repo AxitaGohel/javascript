@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Async JS</title>
+</head>
+<body>
+    
+    <h1>Axita Gohel</h1>
+
+    <button id="stop">STOP</button>
+
+</body>
+
+<script>
+    setTimeout(function(){
+        console.log("Axita")
+    }, 2000)
+
+    //---------------------------------------
+
+    const cor = function(){
+        console.log("Best Learning Course")
+    }
+    setTimeout(cor, 2000)
+
+    //-------------------------------------
+    const changeValue = function(){
+        document.querySelector('h1').innerHTML = "Good Afternoon"
+    }
+    const changeME = setTimeout(changeValue, 5000)
+
+    //-----------------------------------------
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeME)
+        console.log('Stopppp')
+    })
+
+</script>
+
+</html>
